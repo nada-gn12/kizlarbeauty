@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>KizlarBeauty — Sign Up</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <div class="brand">
+        <h1 class="logo"><span class="k">Kizlar</span>Beauty</h1>
+        <p class="tag">Where elegance meets glow ✨</p>
+      </div>
+      <div class="card">
+        <form class="signup" autocomplete="on" novalidate>
+          <h2>Create your account</h2>
+          <p class="muted">Join KizlarBeauty for exclusive offers and early product drops.</p>
+
+          <label class="field">
+            <span>Full name</span>
+            <input type="text" name="fullname" placeholder="Ayla K." required>
+          </label>
+
+          <label class="field">
+            <span>Email</span>
+            <input type="email" name="email" placeholder="you@example.com" required>
+          </label>
+
+          <div class="row">
+            <label class="field small">
+              <span>Password</span>
+              <input type="password" name="password" placeholder="At least 8 characters" minlength="8" required>
+            </label>
+
+            <label class="field small">
+              <span>Confirm</span>
+              <input type="password" name="confirm" placeholder="Repeat password" minlength="8" required>
+            </label>
+          </div>
+
+          <label class="checkbox">
+            <input type="checkbox" name="newsletter" checked>
+            <span>Subscribe to beauty tips &amp; offers</span>
+          </label>
+
+          <button class="btn" type="submit">Sign up</button>
+
+          <div class="divider"><span>or sign up with</span></div>
+
+          <div class="socials">
+            <button type="button" class="social facebook">Continue with Facebook</button>
+            <button type="button" class="social google">Continue with Google</button>
+          </div>
+
+          <p class="small muted">By signing up you agree to our <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.</p>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>Already have an account? <a href="#">Log in</a></p>
+    </footer>
+  </main>
+
+  <script>
+    document.querySelector('.signup').addEventListener('submit', function(e){
+      const p = this.password.value;
+      const c = this.confirm.value;
+      if(p !== c){
+        e.preventDefault();
+        alert('Passwords do not match. Please check.');
+        this.confirm.focus();
+      }
+    });
+  </script>
+</body>
+</html>
