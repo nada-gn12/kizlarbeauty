@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KizlarBeauty</title>
+  <link rel="stylesheet" href="/signe_in/home_page/index.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="/assets/logo-removebg-preview.png" alt="KizlarBeauty logo" id="lipstick-logo">
+      <h1>Kizlar<span>Beauty</span></h1>
+    </div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="/produit/index.html">Shop</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Unleash Your Inner Glow</h2>
+      <p>Discover our new collection of luxury lipsticks and skincare made for confidence and elegance.</p>
+    </div>
+    <div class="hero-img">
+      <img src="/assets/lipp-removebg-preview.png" alt="Lipstick product" class="lipstick">
+    </div>
+  </section>
+
+  <!-- Collection -->
+  <section class="collections">
+    <h3>Our Signature Collection</h3>
+    <div class="items">
+      <div class="item fade-in">
+        <img src="lipstick.png" alt="Matte Lipstick" class="lipstick">
+        <p>Matte Elegance</p>
+      </div>
+      <div class="item fade-in">
+        <img src="lipstick.png" alt="Glossy Lipstick" class="lipstick">
+        <p>Glossy Shine</p>
+      </div>
+      <div class="item fade-in">
+        <img src="lipstick.png" alt="Velvet Lipstick" class="lipstick">
+        <p>Velvet Touch</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- New product -->
+  <section class="new">
+    <img src="lipstick.png" alt="New Collection" class="lipstick">
+    <div class="new-text">
+      <h3>New Arrival: Sparkle Edition 💋</h3>
+      <button class="shop-btn">Shop Now</button>
+    </div>
+  </section>
+
+  <!-- View Product Dynamically -->
+  <section class="view-product">
+    <h3>Featured Products</h3>
+    <div id="shop-list">
+      <!-- Dynamic product links will be inserted here -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="newsletter">
+      <label>Join our newsletter</label>
+      <div class="input-group">
+        <input type="email" placeholder="Enter your email" />
+        <button>Subscribe</button>
+      </div>
+    </div>
+    <p>© 2025 KizlarBeauty. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // example: create links from an array of products
+    const products = [{id:123,name:'Lipstick'},{id:456,name:'Serum'}];
+    const list = document.getElementById('shop-list');
+    products.forEach(p=>{
+      const a = document.createElement('a');
+      a.href = `produit/index.html?id=${encodeURIComponent(p.id)}`;
+      a.textContent = `View ${p.name}`;
+      list.appendChild(a);
+    });
+  </script>
+</body>
+</html>
