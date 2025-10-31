@@ -46,6 +46,63 @@ body {
   transform: scale(1.2);
   color: white;
 }
+// ...existing code...
+/* barre de recherche (div avec width et height) */
+.search-box{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  width:380px;       /* largeur souhaitée */
+  height:44px;       /* hauteur souhaitée */
+  background:#1a1a1a;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid rgba(212,162,90,0.08);
+}
+.search-box input[type="search"]{
+  flex:1;
+  height:100%;
+  background:transparent;
+  border:none;
+  color:#fff;
+  font-size:15px;
+  padding:6px 8px;
+  outline:none;
+}
+.search-box button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:#d4a25a; /* couleur accent */
+  color:#111;
+  border:none;
+  width:36px;
+  height:32px;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:14px;
+}
+.search-box button i{ font-size:14px; }
+
+/* utilitaire accessibilité */
+.visually-hidden{
+  position:absolute !important;
+  height:1px; width:1px;
+  overflow:hidden;
+  clip:rect(1px,1px,1px,1px);
+  white-space:nowrap;
+}
+
+/* responsive */
+@media (max-width:920px){
+  .search-box{ width:280px; }
+}
+@media (max-width:600px){
+  .search-box{
+    display:none; /* Masque la barre sur très petits écrans, remplacez par un bouton si besoin */
+  }
+}
+/* ...existing code... */
 
 /* Lipstick title bar */
 .lipstickbar {
@@ -202,6 +259,19 @@ body {
     font-size:13px;
     opacity:0.7;
     margin-top:6px;
+}
+.site-bottom .btn-bottom.back{
+    background:transparent;
+    border:1px solid rgba(255,255,255,0.10);
+    color:#fff;
+    padding:10px 14px;
+    border-radius:8px;
+    font-weight:600;
+}
+.site-bottom .btn-bottom.back:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 18px rgba(0,0,0,0.35);
+    border-color:rgba(255,255,255,0.25);
 }
 @media (max-width:600px){
     .site-bottom .container{flex-direction:column; padding:0 8px;}
