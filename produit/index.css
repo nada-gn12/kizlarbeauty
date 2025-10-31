@@ -46,7 +46,7 @@ body {
   transform: scale(1.2);
   color: white;
 }
-// ...existing code...
+
 /* barre de recherche (div avec width et height) */
 .search-box{
   display:flex;
