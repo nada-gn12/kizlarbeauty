@@ -1,20 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./index.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Paiement — ISHQ</title>
+  <link rel="stylesheet" href="./index.css">
 </head>
 <body>
+  <header class="pay-header">
+    <a class="back" href="../index.html" aria-label="Retour à la boutique">← Boutique</a>
+    <h1>Finaliser la commande</h1>
+  </header>
 
-    <h1 class="title">pament page</h1>
- 
+  <main class="checkout">
+    <section class="payment">
+      <form id="payment-form" autocomplete="cc-exp">
+        <h2>Informations de paiement</h2>
 
+        <label class="field">
+          <span>Email</span>
+          <input id="email" type="email" name="email" placeholder="vous@exemple.com" required>
+        </label>
 
+        <label class="field">
+          <span>Nom du titulaire</span>
+          <input id="card-name" type="text" name="cardname" placeholder="Ayla K." required>
+        </label>
 
+        <label class="field">
+          <span>Numéro de carte</span>
+          <input id="card-number" inputmode="numeric" pattern="[0-9\s]{13,19}" maxlength="19" placeholder="1234 5678 9012 3456" required>
+        </label>
 
-    <script src="./index.js"></script>
-    
+        <div class="row">
+          <label class="field small">
+            <span>Expiration (MM/AA)</span>
+            <input id="card-exp" inputmode="numeric" placeholder="08/25" pattern="\d{2}/\d{2}" required>
+          </label>
+
+          <label class="field small">
+            <span>CVC</span>
+            <input id="card-cvc" inputmode="numeric" pattern="\d{3,4}" maxlength="4" placeholder="123" required>
+          </label>
+        </div>
+
+        <label class="field">
+          <span>Code postal</span>
+          <input id="postal" type="text" name="postal" placeholder="75001" required>
+        </label>
+
+        <label class="checkbox">
+          <input id="save-card" type="checkbox" checked>
+          <span>Sauvegarder cette carte pour plus tard</span>
+        </label>
+
+        <button id="pay-btn" class="btn" type="submit">Payer maintenant — $78.00</button>
+
+        <p class="muted">Paiement sécurisé. Vos données sont chiffrées.</p>
+      </form>
+    </section>
+
+    <aside class="summary">
+      <h3>Résumé de la commande</h3>
+      <div class="items">
+        <div class="item">
+          <div class="meta">
+            <strong>Matte Elegance</strong>
+            <span>1 ×</span>
+          </div>
+          <div class="price">$30.00</div>
+        </div>
+
+        <div class="item">
+          <div class="meta">
+            <strong>Glossy Shine</strong>
+            <span>1 ×</span>
+          </div>
+          <div class="price">$48.00</div>
+        </div>
+      </div>
+
+      <div class="totals">
+        <div><span>Sous-total</span><span>$78.00</span></div>
+        <div><span>Livraison</span><span>—</span></div>
+        <div class="total"><strong>Total</strong><strong>$78.00</strong></div>
+      </div>
+
+      <p class="help">Besoin d'aide ? <a href="mailto:contact@ishq.com">contact@ishq.com</a></p>
+    </aside>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden>
+    <p id="toast-msg"></p>
+    <button id="toast-close" aria-label="Fermer">OK</button>
+  </div>
+
+  <script src="./index.js"></script>
 </body>
 </html>
