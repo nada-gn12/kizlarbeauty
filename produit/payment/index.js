@@ -1,0 +1,1 @@
+console.log('Payment safae index.js loaded');
