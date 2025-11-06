@@ -45,3 +45,8 @@ sparkleStyle.textContent = `
 }
 `;
 document.head.appendChild(sparkleStyle);
+
+// Add event listener for shop now button
+document.querySelector('.shop-btn').addEventListener('click', () => {
+    window.location.href = '/produit/index.html';
+});
