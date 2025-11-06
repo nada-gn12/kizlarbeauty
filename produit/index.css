@@ -361,3 +361,71 @@ body {
     .btn-bottom{width:100%; text-align:center;}
 }
 
+
+/* Boutons "Ajouter au panier" */
+.add-to-cart {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: linear-gradient(180deg,#000000 0%,#460713 100%);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+  box-shadow: 0 6px 18px rgba(255,77,109,0.18);
+  text-decoration: none; /* si c'est un <a> */
+}
+
+/* si tu veux que le bouton prenne toute la largeur de la carte */
+.produit .add-to-cart,
+.produit2 .add-to-cart {
+  width: 100%;
+  justify-content: center;
+}
+
+/* État au survol / focus */
+.add-to-cart:hover,
+.add-to-cart:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(255,77,109,0.22);
+  outline: none;
+}
+
+/* État actif / enfoncé */
+.add-to-cart:active {
+  transform: translateY(-1px) scale(0.995);
+}
+
+/* Variante secondaire (ghost) */
+.add-to-cart.ghost {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: none;
+}
+
+/* Désactivé */
+.add-to-cart:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Petite icône à l'intérieur (si tu utilises <i> ou svg) */
+.add-to-cart i,
+.add-to-cart .icon {
+  font-size: 14px;
+  line-height: 1;
+}
+
+/* Responsive : boutons plus petits sur petits écrans */
+@media (max-width:520px){
+  .add-to-cart { padding: 9px 12px; font-size:13px; border-radius:8px; }
+  .produit, .produit2 .add-to-cart { width:100%; }
+}
+
