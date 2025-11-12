@@ -1,0 +1,27 @@
+/* style pour la page login (légerement différent si souhaité) */
+:root{
+  --bg-img: url('../assets/sources1.jpg');
+  --card-bg: rgba(11,14,18,0.62);
+  --accent: #6aa0ff;
+  --muted: #cfcfd6;
+}
+*{box-sizing:border-box;font-family:Inter,system-ui,Arial,sans-serif}
+html,body{height:100%;margin:0}
+body{
+  background: linear-gradient(rgba(2,6,23,0.55), rgba(2,6,23,0.55)), var(--bg-img) center/cover no-repeat;
+  display:flex;align-items:center;justify-content:center;padding:24px;color:#fff;
+}
+.card{
+  width:100%;max-width:420px;background:var(--card-bg);padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);
+  box-shadow:0 10px 28px rgba(2,6,23,0.6);
+}
+h1{margin:0 0 6px;font-size:20px}
+.lead{margin:0 0 14px;color:var(--muted)}
+label{display:block;font-size:13px;color:var(--muted);margin-bottom:10px}
+input{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#fff;margin-top:6px}
+.btn{padding:10px 12px;border-radius:10px;border:none;background:linear-gradient(180deg,var(--accent),#2b7bff);color:#fff;font-weight:700;cursor:pointer}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06)}
+.msg{margin-top:10px;color:#ffd6d6;font-size:14px;min-height:18px}
+.foot{margin-top:12px;text-align:center;color:var(--muted)}
+a{color:#bfe1ff;text-decoration:underline}
+@media (max-width:520px){ .card{padding:16px} input{padding:9px} }
