@@ -66,17 +66,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Panier icône - exemple minimal
   if (panierIcon) {
-    panierIcon.addEventListener('click', () => {
-      // afficher contenu simple du panier
-      if (cart.length === 0) {
-        alert('Votre panier est vide.');
-        return;
-      }
-      const lines = cart.map(i => `${i.name} ×${i.quantity} — $${(i.price * i.quantity).toFixed(2)}`);
-      const total = cart.reduce((s,i)=>s + i.price * i.quantity, 0).toFixed(2);
-      alert(lines.join('\n') + `\n\nTotal: $${total}`);
-    });
-  }
+  panierIcon.addEventListener('click', () => {
+    window.location.href = 'panier/index.html';
+  });
+}
 
   // Recherche simple
   if (searchForm) {

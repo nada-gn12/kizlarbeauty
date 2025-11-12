@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Panier — ISHQ</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <!-- Header simple -->
+  <header class="header-panier">
+    <a href="../index.html" class="back">← Retour</a>
+    <h1>Votre panier</h1>
+  </header>
+
+  <!-- Contenu du panier -->
+  <main class="panier-main">
+    
+    <!-- Liste des produits -->
+    <section class="panier-liste">
+      <div id="panier-items" class="items"></div>
+    </section>
+
+    <!-- Résumé et action -->
+    <aside class="panier-resume">
+      <h2>Résumé</h2>
+      <div id="panier-total" class="total">Total: $0.00</div>
+      
+      <div class="actions">
+        <a href="/produit/payment/index.html">allez au paiement</a>
+      </div>
+    </aside>
+
+  </main>
+
+  <script src="./panier.js"></script>
+</body>
+</html>
